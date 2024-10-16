@@ -17,7 +17,6 @@ export default function Header(){
         <header className="header">
             <Link to="/"><VscCode size="5rem" className="main-logo"/></Link> 
             
-                <nav>
                 <div onClick={toggleMenu} className="hamburger-btn">
                     <svg className="burger-menu" width="100" viewBox="0 0 100 100">
                         <rect className={`line top ${toggled? "expanded" : ''}`} width="80" height="8" x="10" y="25" rx="5"></rect>
@@ -36,7 +35,6 @@ export default function Header(){
                             <Socials />
                         </div>
                     </ul>
-                </nav>
         </header>
     )
 }

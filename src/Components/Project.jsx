@@ -25,10 +25,6 @@ export default function Project(){
         }
     }, [isIntersecting])
 
-
-
-    
-
     return (
         <div className="project" ref={ref}>
                         test

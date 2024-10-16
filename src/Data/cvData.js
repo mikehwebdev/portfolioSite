@@ -1,7 +1,7 @@
 const cvData = [{
     id: 0,
     title: "Personal statement",
-    text: ["I'm a hardworking and dedicated individual who is just as happy working in a team as I am working independantly.", "I have a keen eye for detail as well as aptitude for thinking abut the wider consequences of my actions and work.", "I have great resilience to challenging working conditions and am never afraid to get my hands dirty and do my bit to acheive my own goals and the goals of my team.", "Despite my great work ethic I'm still always up for a laugh and am great at striking a balance between having a good time and creating a positive working environment and getting the job done."]
+    text: ["I'm a hardworking and focussed individual who is just as happy working in a team as I am working independently.", "I have a keen eye for detail as well as aptitude for thinking abut the wider consequences of my actions and work.", "I have great resilience to challenging working conditions and am never afraid to get my hands dirty. I'm always ready to get stuck in and do my bit to acheive my own goals and the goals of my team.", "Despite my great work ethic I'm still always up for a laugh and am great at striking a balance between having a good time and creating a positive working environment and getting the job done."]
 
 },
 {
@@ -55,7 +55,7 @@ const cvData = [{
 {
     id: 90,
     title: "Key skills",
-    list: ["Semantic HTML", "CSS", "Javascript", "React", "Excellent  communication skills", "Problem solving", "Excellent telephone manner", "Calm under pressure", "Sales", "Full clean driving licence"]
+    list: ["Semantic HTML", "CSS", "Javascript", "React","Git & GitHub", "Excellent  communication skills", "Problem solving", "Excellent telephone manner", "Calm under pressure", "Sales", "Full clean driving licence"]
 },
 
 {
