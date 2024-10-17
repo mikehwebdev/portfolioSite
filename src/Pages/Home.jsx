@@ -8,9 +8,6 @@ export default function Home(){
             <h2 className="title"> Hi I'm Mike Hatton's test- Web developer - Father - Horror film aficianado</h2>
             <img src={profileImg} className='content-img'/>
             <p className='main-text'>Welcome to my site! Please feel free to have a click around to see what I'm about, explore the little micro-apps I have dotted around my site, and if you'd like to get in touch feel free to have click on my social links below.
-
-            This is just a branching test. I'm not condfident yest and want to try merging
-
             </p>
         </section>
     )
