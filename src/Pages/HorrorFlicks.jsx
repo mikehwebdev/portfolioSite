@@ -37,8 +37,8 @@ export default function HorrorFlicks(){
     
     return (
         <>   
-            <section className="section horror">
-            <h2 className="title">Horror flick micro reviews</h2>
+            <section className="section horror-section">
+            <h2 className="title horror-title">Horror flick micro reviews</h2>
                {id ? <Flick/> :
                <div className="flick-search">
                 <input 

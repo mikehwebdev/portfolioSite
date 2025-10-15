@@ -14,7 +14,7 @@ export default function Project(){
             },
             {rootMargin:"-50px -50px"}
         )
-        // console.log(isIntersecting)
+        
         observer.observe(ref.current)
         return ()=> observer.disconnect()
     },[isIntersecting])
