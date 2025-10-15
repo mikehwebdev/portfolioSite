@@ -1,8 +1,5 @@
 import profileImg from '../imgs/profile image.jpg'
 
-
-
-
 export default function Home(){
     return (
         <section className="section home-section">

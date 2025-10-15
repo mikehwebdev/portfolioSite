@@ -29,7 +29,6 @@ export default function Header(){
                         <Link to="/About" className="nav-link">About</Link>
                         <Link to="/Projects" className="nav-link">Projects</Link>
                         <Link to="/CV" className="nav-link">Interactive CV</Link>
-                        <Link to="/HorrorFlicks" className="nav-link">Horror Flicks</Link>
                         <Link to="/Widgets" className="nav-link">Widgets</Link>
                         <div className="nav-socials">
                             <Socials />
@@ -41,7 +40,6 @@ export default function Header(){
                             <NavLink to="/About" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>About</NavLink>
                             <NavLink to="/Projects" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Projects</NavLink>
                             <NavLink to="/CV" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Interactive CV</NavLink>
-                            <NavLink to="/HorrorFlicks" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Horror Flicks</NavLink>
                             <NavLink to="/Widgets" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Widgets</NavLink>
                         </ul>
         </header>

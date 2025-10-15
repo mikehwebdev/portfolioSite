@@ -58,8 +58,10 @@ html {
 }
 
 .footer {
+  margin-top: auto;
   display: flex;
   justify-content: center;
+  
   width: 100%;
   padding: .5rem 0;
   z-index: 2;
@@ -146,10 +148,10 @@ html {
 }
 
 .nav-socials {
- display: flex;
- flex-direction: row;
- justify-content: center;
- padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1rem;
 }
 
 .menu-visible {
@@ -273,9 +275,9 @@ html {
   font-size: 1.25rem;
   grid-column: 2/4;
 }
-
+ 
 /* Horror flicks page styling */
-
+/* 
 .horror-title {
   margin-bottom: 2rem;
 }
@@ -497,8 +499,8 @@ html {
 }
 
 .imdb-score{
-  font-size: 1.5rem;
-}
+  font-size: 1.5rem; */
+
 
 /* Interactive CV styling */
 
