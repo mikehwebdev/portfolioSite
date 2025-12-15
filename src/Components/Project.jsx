@@ -1,33 +1,67 @@
 import { useState, useRef, useEffect } from "react"
+import Gallery from "./Gallery"
+// * Imported icons *
+import { TbWorldWww } from "react-icons/tb"
+import { TbBrandGithub } from "react-icons/tb"
 
+// * Project card component * 
+export default function Project({id, title, description, images, liveLink, githubLink}) {
 
-export default function Project(){
-
-
+// Ref for DOM element for intersection observer
     const ref = useRef()
+
+// State to detect if element is in viewport
     const [isIntersecting, setIsIntersecting] = useState(false)
 
-    useEffect(()=>{
+// Set up Intersection Observer to detect when element enters viewport
+    useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) =>{
-                setIsIntersecting(entry.isIntersecting  )
+            ([entry]) => {
+                // Updates the state
+                setIsIntersecting(entry.isIntersecting)
             },
-            {rootMargin:"-50px -50px"}
+            // Triggers before element fully visble - snazzy!
+            { rootMargin: "-50px -50px" }
         )
-        
-        observer.observe(ref.current)
-        return ()=> observer.disconnect()
-    },[isIntersecting])
 
-    useEffect(()=>{
+        // Start observing element
+        observer.observe(ref.current)
+        // Cleanup observer
+        return () => observer.disconnect()
+    }, [])
+
+    // Add animation to bring into view
+    useEffect(() => {
         if (isIntersecting) {
-            ref.current.classList.add('slide-test')
+            ref.current.classList.add('project')
         }
     }, [isIntersecting])
 
+    // "Description" is an array of strings so I map over it to create <p> elements here
+const descriptionElements = description.map(string => <p className="project-description-text" key={string}>{string}</p>)
+
     return (
-        <div className="project" ref={ref}>
-                        test
+        // Project card - class with id is different stating position for extra snazz
+        <div className={`project-${id}`} ref={ref}>
+            {/* Project content */}
+            <h2 className="project-title">{title}</h2>
+            <div className="project-description-container">
+                {descriptionElements}
+            </div>
+            <Gallery 
+                imgArray={images}
+                title={title}
+                id={id}
+            />
+            {/* Live link and Github link */}
+            <div className="project-live-link-container">
+                <TbWorldWww className="project-icon" />
+                <a className="project-live-link" href={liveLink} target="_blank">Live site</a>
+            </div>
+            <div className="project-github-link-container">
+                <TbBrandGithub className="project-icon" />
+                <a className="project-github-link" href={githubLink} target="_blank">Github repository</a>
+            </div>
         </div>
     )
 }

@@ -12,19 +12,17 @@ import Widgets from './Pages/Widgets'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={<RootLayout />}>
-    <Route index element={<Home/> } />
+    <Route index element={<Home />} />
     <Route path="*" element={<Error />} />
-    <Route path="About" element={<About />}/>
-    <Route path="Projects" element={<Projects />}/>
-    <Route path="CV" element={<CV />}/>
-    <Route path="Widgets" element={<Widgets />}/>
-    
-
+    <Route path="About" element={<About />} />
+    <Route path="Projects" element={<Projects />} />
+    <Route path="CV" element={<CV />} />
+    <Route path="Widgets" element={<Widgets />} />
   </Route>
 ))
 
-export default function App(){
+export default function App() {
   return (
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   )
 }

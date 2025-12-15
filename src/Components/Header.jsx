@@ -2,46 +2,68 @@ import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { VscCode } from "react-icons/vsc"
 import Socials from "./Socials"
+import { useToggler } from "../Hooks/useToggler"
 
 
-export default function Header(){
+// Navigation items configuration - single source of truth
+const navItems = [
+    { to: "/", label: "Home" },
+    { to: "/About", label: "About" },
+    { to: "/Projects", label: "Projects" },
+    { to: "/CV", label: "Interactive CV" },
+    { to: "/Widgets", label: "Widgets" }
+]
 
-    const [toggled, setToggled] = useState(false)
+// *** Header component *** - main navigation with mobile and desktop menus
+export default function Header() {
 
-    function toggleMenu(){
-        setToggled(prev => !prev)
-
-    }
+    // Track mobile navigation menu open/closed state
+    const [navMenu, toggleNavMenu] = useToggler(false)
 
     return (
         <header className="header">
-            <Link to="/" className="main-logo-link"><VscCode size="5rem" className="main-logo"/></Link> 
-            
-                <div onClick={toggleMenu} className="hamburger-btn">
-                    <svg className="burger-menu" width="100" viewBox="0 0 100 100">
-                        <rect className={`line top ${toggled? "expanded" : ''}`} width="80" height="8" x="10" y="25" rx="5"></rect>
-                        <rect className={`line middle ${toggled? "expanded" : ''}`} width="80" height="8" x="10" y="45" rx="5"></rect>
-                        <rect className={`line bottom ${toggled? "expanded" : ''}`} width="80" height="8" x="10" y="65" rx="5"></rect>
-                    </svg>
+            {/* Logo link - navigates to home page */}
+            <Link to="/" className="main-logo-link">
+                <VscCode size="5rem" className="main-logo" />
+            </Link>
+
+            {/* Hamburger menu button - toggles mobile nav visibility */}
+            <div onClick={toggleNavMenu} className="hamburger-btn" role="button" aria-label="Toggle navigation menu">
+                <svg className="burger-menu" width="100" viewBox="0 0 100 100" aria-hidden="true">
+                    {/* Hamburger menu lines that animate on toggle */}
+                    <rect className={`line top ${navMenu ? "expanded" : ''}`} width="80" height="8" x="10" y="25" rx="5"></rect>
+                    <rect className={`line middle ${navMenu ? "expanded" : ''}`} width="80" height="8" x="10" y="45" rx="5"></rect>
+                    <rect className={`line bottom ${navMenu ? "expanded" : ''}`} width="80" height="8" x="10" y="65" rx="5"></rect>
+                </svg>
+            </div>
+
+            {/* Mobile navigation menu - shown/hidden based on navMenu state */}
+            <nav className={`nav-menu ${navMenu ? 'menu-visible' : ''}`} onClick={toggleNavMenu} role="navigation" aria-label="Mobile navigation">
+                {/* Map through navItems to render mobile links */}
+                {navItems.map(item => (
+                    <Link to={item.to} className="nav-link" key={item.to}>
+                        {item.label}
+                    </Link>
+                ))}
+                {/* Social media links in mobile menu */}
+                <div className="nav-socials">
+                    <Socials />
                 </div>
-                    <ul className={`nav-menu ${toggled? 'menu-visible' : ''}`} onClick={toggleMenu}>
-                        <Link to="/" className="nav-link" >Home</Link>
-                        <Link to="/About" className="nav-link">About</Link>
-                        <Link to="/Projects" className="nav-link">Projects</Link>
-                        <Link to="/CV" className="nav-link">Interactive CV</Link>
-                        <Link to="/Widgets" className="nav-link">Widgets</Link>
-                        <div className="nav-socials">
-                            <Socials />
-                        </div>
-                    </ul>
-{/* refactor this mess */}
-                        <ul className="nav-menu-large">
-                            <NavLink to="/" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Home</NavLink>
-                            <NavLink to="/About" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>About</NavLink>
-                            <NavLink to="/Projects" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Projects</NavLink>
-                            <NavLink to="/CV" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Interactive CV</NavLink>
-                            <NavLink to="/Widgets" className={({isActive})=> isActive? 'nav-link active-link' : 'nav-link'}>Widgets</NavLink>
-                        </ul>
+            </nav>
+
+            {/* Desktop navigation menu - visible on larger screens */}
+            <nav className="nav-menu-large" role="navigation" aria-label="Main navigation">
+                {/* Map through navItems to render desktop links with active state */}
+                {navItems.map(item => (
+                    <NavLink 
+                        to={item.to} 
+                        className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}
+                        key={item.to}
+                    >
+                        {item.label}
+                    </NavLink>
+                ))}
+            </nav>
         </header>
     )
 }
