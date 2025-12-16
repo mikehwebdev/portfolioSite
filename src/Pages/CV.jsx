@@ -24,6 +24,9 @@ export default function CV() {
     // State for dial rotation angle (0, 45, 90, 135, 180 degrees)
     const [num, setNum] = useState(0)
 
+    //  State for calculating direction of swipe for CV dial 
+    const [xPosition, setXPosition] = useState(null)
+
     // Update dial rotation when icon is clicked
     function rotateDial(value) {
         setNum(value)
@@ -154,6 +157,26 @@ export default function CV() {
         { Icon: FaGamepad, className: 'hobbies', rotation: 180, label: 'Hobbies' }
     ]
 
+// Calculate dial rotation based on touch swipe direction - built in control stops rotation beyond the first (0°) or last (180°) sections
+function xPositionCalculator (newXPosition){
+    // User swiped right - rotate dial forward (next section, +45°)
+    if (xPosition < newXPosition) {
+        // Stop at last section (180°)
+        if (num === 180) {
+            return 
+        }
+        setNum(prev => (prev + 45))
+    } 
+    // User swiped left - rotate dial backward (previous section, -45°)
+    else if (xPosition > newXPosition) {
+        // Stop at first section (0°)
+        if (num === 0) {
+            return 
+        }
+        setNum(prev => (prev - 45))
+    }
+} 
+
     return (
         <section className="section CV-section">
             <h2 className="title cv-title">Mike's interactive CV</h2>
@@ -161,7 +184,12 @@ export default function CV() {
             {/* Interactive CV dial selector - click icons rotates to show different CV sections */}
             <div className="interactive-CV-container">
                 {/* Rotating dial that visually indicates selected section */}
-                <div className="cv-dial" style={style}>
+                <div 
+                className="cv-dial" 
+                style={style}
+                onTouchStart={(e) => setXPosition(e.touches[0].screenX)}
+                onTouchEnd={(e) => {xPositionCalculator(e.changedTouches[0].screenX)}}
+                >
                     <div className="knob"></div>
                 </div>
                 
