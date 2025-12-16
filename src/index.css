@@ -226,6 +226,9 @@ img {
     0 20px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.05);
   grid-column: 2/4;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
 }
 
 .main-text {
@@ -307,6 +310,8 @@ img {
     0 20px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
 }
 
 .dad-hair-container {
@@ -489,6 +494,7 @@ img {
   transition: 250ms all ease-in;
   cursor: pointer;
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .pulsing-image {
