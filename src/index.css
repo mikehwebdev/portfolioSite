@@ -226,6 +226,7 @@ img {
     0 20px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.05);
   grid-column: 2/4;
+  overflow: hidden;
 }
 
 .main-text {
@@ -306,6 +307,7 @@ img {
     0 10px 30px rgba(0, 0, 0, 0.2),
     0 20px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .dad-hair-container {
@@ -485,6 +487,7 @@ img {
   flex: 1 1 50px;
   transition: 250ms all ease-in;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .pulsing-image {
