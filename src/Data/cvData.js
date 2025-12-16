@@ -71,7 +71,7 @@ const cvData = [{
 {
     id: 90,
     title: "Skills",
-    list: ["Excellent communication skills", "Problem solver", "Great at fostering inter-team collaboration", "Excellent telephone manner", "Calm under pressure", "Excellent team player", "Motivated learner", "Conflict resolution", "Training and coaching", "Presentation and public speaking", "Data and trend analysis", "Full clean driving licence"]
+    list: ["HTML 5", "CSS", "Javascript", "React", "React Router", "Git", "Responsive Design", "Excellent communication skills", "Problem solver", "Great at fostering inter-team collaboration", "Excellent telephone manner", "Calm under pressure", "Excellent team player", "Motivated learner", "Conflict resolution", "Training and coaching", "Presentation and public speaking", "Data and trend analysis", "Full clean driving licence"]
 },
 
 {

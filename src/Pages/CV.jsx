@@ -27,14 +27,19 @@ export default function CV() {
     //  State for calculating direction of swipe for CV dial 
     const [xPosition, setXPosition] = useState(null)
 
+    // State for active dragging and temporary rotation during drag
+    const [isDragging, setIsDragging] = useState(false)
+    const [tempRotation, setTempRotation] = useState(0)
+
     // Update dial rotation when icon is clicked
     function rotateDial(value) {
         setNum(value)
     }
 
-    // Apply rotation transform to dial element
+    // Apply rotation transform to dial element - use tempRotation while dragging, otherwise use num
     const style = {
-        transform: `rotate(${num}deg)`
+        transform: `rotate(${isDragging ? tempRotation : num}deg)`,
+        transition: isDragging ? 'none' : 'transform 0.3s ease-out'
     }
 
     // State for contextual CV data  
@@ -54,7 +59,7 @@ export default function CV() {
     // Map CV data into displayable elements
     const cvElement = cvdata.map(element => {
 
-        return <div 
+        return <div
             key={element.id}
             // Add transition class when this section is selected
             className={`cv-element${element.id === num ? " transition-visibility" : ""}`}>
@@ -85,13 +90,13 @@ export default function CV() {
 
                     {element.subItems.map((item, index) => {
                         return (
-                            <div 
+                            <div
                                 // Add class to expand height when toggled 
                                 className={`cv-element-subItem ${item.toggled ? 'cv-max-height' : ''}`}
                                 key={index}
                                 // Toggle expanded state on click
                                 onClick={(() => toggler(item.id))}>
-                                
+
                                 {/* Arrow icon that rotates when section expanded */}
                                 <FaAnglesDown className={`cv-arrow${item.toggled ? " rotate-cv-arrow" : ''}`} />
                                 {/* Job section with all relevant content */}
@@ -157,25 +162,28 @@ export default function CV() {
         { Icon: FaGamepad, className: 'hobbies', rotation: 180, label: 'Hobbies' }
     ]
 
-// Calculate dial rotation based on touch swipe direction - built in control stops rotation beyond the first (0°) or last (180°) sections
-function xPositionCalculator (newXPosition){
-    // User swiped right - rotate dial forward (next section, +45°)
-    if (xPosition < newXPosition) {
-        // Stop at last section (180°)
-        if (num === 180) {
-            return 
+    // Calculate dial rotation based on touch swipe direction - built in control stops rotation beyond the first (0°) or last (180°) sections
+    function xPositionCalculator(newXPosition) {
+
+        // User swiped right - rotate dial forward (next section, +45°)
+        if (xPosition < newXPosition) {
+            // Stop at last section (180°)
+            if (num === 180) {
+                return
+            }
+
+            setNum(prev => (prev + 45))
         }
-        setNum(prev => (prev + 45))
-    } 
-    // User swiped left - rotate dial backward (previous section, -45°)
-    else if (xPosition > newXPosition) {
-        // Stop at first section (0°)
-        if (num === 0) {
-            return 
+        // User swiped left - rotate dial backward (previous section, -45°)
+        else if (xPosition > newXPosition) {
+
+            // Stop at first section (0°)
+            if (num === 0) {
+                return
+            }
+            setNum(prev => (prev - 45))
         }
-        setNum(prev => (prev - 45))
     }
-} 
 
     return (
         <section className="section CV-section">
@@ -184,20 +192,20 @@ function xPositionCalculator (newXPosition){
             {/* Interactive CV dial selector - click icons rotates to show different CV sections */}
             <div className="interactive-CV-container">
                 {/* Rotating dial that visually indicates selected section */}
-                <div 
-                className="cv-dial" 
-                style={style}
-                onTouchStart={(e) => setXPosition(e.touches[0].screenX)}
-                onTouchEnd={(e) => {xPositionCalculator(e.changedTouches[0].screenX)}}
+                <div
+                    className="cv-dial"
+                    style={style}
+                    onTouchStart={(e) => setXPosition(e.touches[0].screenX)}
+                    onTouchEnd={(e) => { xPositionCalculator(e.changedTouches[0].screenX) }}
                 >
                     <div className="knob"></div>
                 </div>
-                
+
                 {/* Map through sections to render clickable icons */}
                 {cvSections.map(({ Icon, className, rotation, label }) => (
-                    <Icon 
+                    <Icon
                         key={label}
-                        onClick={() => rotateDial(rotation)} 
+                        onClick={() => rotateDial(rotation)}
                         className={`cv-icon ${className}`}
                         aria-label={`${label} section`}
                     />

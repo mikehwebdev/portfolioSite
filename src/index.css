@@ -196,7 +196,11 @@ html {
 .error-image {
   margin-bottom: 1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+}
 
+img {
+  display: block;
+  background-color: transparent;
 }
 
 /* Home page styling */
