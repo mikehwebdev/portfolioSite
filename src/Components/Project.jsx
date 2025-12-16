@@ -54,14 +54,18 @@ const descriptionElements = description.map(string => <p className="project-desc
                 id={id}
             />
             {/* Live link and Github link */}
+            <a className="project-live-link" href={liveLink} target="_blank">
             <div className="project-live-link-container">
                 <TbWorldWww className="project-icon" />
-                <a className="project-live-link" href={liveLink} target="_blank">Live site</a>
+                <p className="project-live-link-text">Live site</p> 
             </div>
+            </a>
+            <a className="project-github-link" href={githubLink} target="_blank">
             <div className="project-github-link-container">
                 <TbBrandGithub className="project-icon" />
-                <a className="project-github-link" href={githubLink} target="_blank">Github repository</a>
+                <p className="project-github-link-text">Github repository</p>
             </div>
+            </a>
         </div>
     )
 }

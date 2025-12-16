@@ -33,7 +33,9 @@ export default function Widgets() {
             {/* Netflix-style play next button */}
             <div className="widget">
                 <h3 className="widget-title">Netflix style play next button</h3>
-                <div className="play-next-container">
+                <div 
+                className="play-next-container"
+                onClick={togglePlayNext}>
                     {/* The light background layer */}
                     <div className="play-next-light">
                         <p className="play-next-text"><HiMiniPlay />Play next</p>
@@ -43,13 +45,6 @@ export default function Widgets() {
                         <p className="play-next-text"><HiMiniPlay className="play-next-logo" />Play next</p>
                     </div>
                 </div>
-                {/* Toggle button for animation */}
-                <button 
-                    className={`activate-btn ${playNext ? 'adjust-width' : ''}`} 
-                    onClick={togglePlayNext}
-                >
-                    {!playNext ? "Activate this widget" : "De-activate"}
-                </button>
             </div>
 
             {/* Dog gallery widget */}
@@ -79,16 +74,11 @@ export default function Widgets() {
             <div className="dark-widget">
                 <h3 className="dark-widget-title">Neon widget</h3>
                 {/* Neon text with glow and flickering effect */}
-                <div className={`neon-container ${neon ? '' : 'neoff'}`}>
+                <div 
+                className={`neon-container ${neon ? '' : 'neoff'}`}
+                onClick={toggleNeon}>
                     {neon ? 'Neon' : 'Neoff'}
                 </div>
-                {/* Toggle button */}
-                <button 
-                    className={`dark-activate-btn ${neon ? 'adjust-width' : ''}`} 
-                    onClick={toggleNeon}
-                >
-                    {!neon ? "Activate this widget" : "De-activate"}
-                </button>
             </div>
 
             {/* Social media widget */}

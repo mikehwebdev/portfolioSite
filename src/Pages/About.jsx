@@ -11,9 +11,9 @@ const warningMessages = [
     'Are you sure?',
     'Very sure?',
     'Okay, as long as you are 100% sure?',
-    'You know I tried to stop you.',
+    'You know, I tried to stop you.',
     'Last chance!',
-    'I tried to warn you!'
+    'Okay then. I tried to warn you!!'
 ]
 
 

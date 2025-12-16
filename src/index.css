@@ -403,8 +403,8 @@ html {
     ". . . . . ."
     " massive-image massive-image massive-image massive-image massive-image massive-image "
     ". . . . . ."
-    ". live-link-container live-link-container live-link-container live-link-container ."
-    ". github-link-container github-link-container github-link-container github-link-container ."
+    ". project-live-link project-live-link project-live-link project-live-link ."
+    ". project-github-link project-github-link project-github-link project-github-link ."
     
     ". . . . . .";
   margin-bottom: 5rem;
@@ -436,17 +436,17 @@ html {
   align-items: center;
 }
 
-.project-live-link-container {
-  grid-area: live-link-container;
+.project-live-link {
+  grid-area: project-live-link;
 }
 
-.project-github-link-container {
-  margin-top: 1rem;
-  grid-area: github-link-container;
-}
-
-.project-live-link,
 .project-github-link {
+  grid-area: project-github-link;
+  margin-top: 1.5rem;
+}
+
+.project-live-link-text,
+.project-github-link-text {
   font-size: clamp(1.25rem, 3vw, 2rem);
   margin-left: 1rem;
 }
@@ -482,14 +482,8 @@ html {
   cursor: pointer;
 }
 
-.project-image:active {
-  transform: scale(.9);
-  box-shadow: none;
-}
-
 .pulsing-image {
-  animation: pulse 2500ms ease infinite;
-  max-width: 8rem;
+  animation: pulse 1500ms ease infinite;
 }
 
 @keyframes pulse {
@@ -704,6 +698,7 @@ html {
   margin-right: 1rem;
   font-size: 2.25rem;
   transition: transform 500ms;
+  cursor: pointer;
 }
 
 .rotate-cv-arrow {
@@ -979,24 +974,30 @@ a {
   .project {
     max-width: 80rem;
     grid-template-columns: 1.5rem 2fr 2rem 3fr 1.5rem;
-    grid-template-rows: 1.5rem auto 10rem auto 1.5rem auto 1.5rem;
+    grid-template-rows: 1.5rem auto auto 1fr 1.5rem auto 1.5rem;
     grid-template-areas:
       ". . . . ."
       ". title title title ."
       ". description . images ."
       ". description . massive-image ."
       ". . . . . "
-      ". project-live-link-container . project-github-link-container ."
+      ". project-live-link . project-github-link ."
       ". . . . .";
   }
 
-  .project-live-link-container {
-    grid-area: project-live-link-container;
+  .project-gallery-container {
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
 
-  .project-github-link-container {
-    grid-area: project-github-link-container;
-    padding-left: 5rem;
+  .project-live-link {
+    grid-area: project-live-link;
+  }
+
+  .project-github-link {
+    grid-area: project-github-link;
+    margin: 0;
   }
 }
 

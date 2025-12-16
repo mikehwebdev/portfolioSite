@@ -2,6 +2,8 @@ import horror1 from "../imgs/Projects/HorrorFlick/Horror1.png"
 import horror2 from "../imgs/Projects/HorrorFlick/Horror2.png"
 import horror3 from "../imgs/Projects/HorrorFlick/Horror3.png"
 import horror4 from "../imgs/Projects/HorrorFlick/Horror4.png"
+import horror5 from "../imgs/Projects/HorrorFlick/Horror5.png"
+import horror6 from "../imgs/Projects/HorrorFlick/Horror6.png"
 
 
 const projectData = [
@@ -13,7 +15,7 @@ const projectData = [
                         "Anyone visiting can peruse the reviews or even write their own if they wish with localStorage allowing the reviews they create to persist between visits. ", 
                         "From the start I wanted the app to combine data fetched from the internet and user generated content to create a personalised app for themselves.", 
                         "If the user then decides to remove a review that's no problem at all with a slick and easy to understand interface they can."],
-        images: [horror1, horror2, horror3, horror4],
+        images: [horror1, horror2, horror3, horror4, horror5, horror6],
         liveLink: "https://horrorflickreviews.netlify.app/",
         githubLink: "https://github.com/mikehwebdev/horrorFlickReviews"
     }
