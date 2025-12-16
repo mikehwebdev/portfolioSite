@@ -318,6 +318,7 @@ img {
   align-self: center;
   transition: all 250ms linear;
   overflow: hidden;
+  background-color: transparent;
 }
 
 
