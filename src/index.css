@@ -201,6 +201,7 @@ html {
 img {
   display: block;
   background-color: transparent;
+  overflow: hidden;
 }
 
 /* Home page styling */
