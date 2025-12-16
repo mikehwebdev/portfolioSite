@@ -226,7 +226,6 @@ img {
     0 20px 60px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(0, 0, 0, 0.05);
   grid-column: 2/4;
-  overflow: hidden;
 }
 
 .main-text {
@@ -318,6 +317,7 @@ img {
   width: 100%;
   align-self: center;
   transition: all 250ms linear;
+  overflow: hidden;
 }
 
 
