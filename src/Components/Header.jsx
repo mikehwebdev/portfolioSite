@@ -8,7 +8,7 @@ import { useToggler } from "../Hooks/useToggler"
 // Navigation items configuration - single source of truth
 const navItems = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
+    { to: "/about", label: "About me" },
     { to: "/projects", label: "Projects" },
     { to: "/cv", label: "Interactive CV" },
     { to: "/widgets", label: "Widgets" }

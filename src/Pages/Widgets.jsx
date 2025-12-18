@@ -35,7 +35,7 @@ export default function Widgets() {
             <p className="widgets-description-text"> I think a common trait for all frontend developers is seeing a fancy
                 little widget online,  whether by another developer or as part of a larger existing app, and thinking <em>Ooh I want to try that!</em></p>
             <p className="widgets-description-text"> This section is dedicated to those little widgets. Each one is my own little creation built from the
-                ground up. Some are surrisingly simple and some have been tricky little blighters but each one has been a lot of fun and a great little exercise.
+                ground up. Some are surprisingly simple and some have been tricky little blighters but each one has been a lot of fun and a great little exercise.
             </p>
             <section className="section widgets-section">
 

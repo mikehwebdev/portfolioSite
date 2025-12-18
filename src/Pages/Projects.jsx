@@ -30,7 +30,7 @@ export default function Projects() {
 
         <section className="section projects-container">
             <h2 className="title">Projects</h2>
-            <p className="projects-description-text">Here I've incldued a selection of my best projects.</p>
+            <p className="projects-description-text">Here I've included a selection of my best projects.</p>
             <p className="projects-description-text">These projects are more technically complicated apps or full sites that I've developed as side projects
                 to really show off my web development skills.
             </p>

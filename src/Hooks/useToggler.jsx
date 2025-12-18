@@ -11,7 +11,7 @@ export function useToggler(defaultValue = false) {
     // Function to toggle the boolean value
     const toggle = () => setValue(prev => !prev)
 
-    // Return currentstate and toggle function 
+    // Return current state and toggle function 
     return [value, toggle]
 
 }

@@ -26,8 +26,6 @@
   flex-wrap: wrap;
   gap: 2rem;
   width: 90%;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
-  align-content: space-around;
   padding: 2rem 0;
 }
 

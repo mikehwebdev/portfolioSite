@@ -104,7 +104,7 @@ export default function CV() {
                 <ul className="cv-element-list">
                     {element.list.map((list, index) => <li className="cv-element-list-item" key={index}>{list}</li>)}
                 </ul>}
-            {/* Expendable sub-items if data is present */}
+            {/* Expandable sub-items if data is present */}
             {element.subItems
 
                 &&

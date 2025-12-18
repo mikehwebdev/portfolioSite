@@ -20,7 +20,7 @@ export default function Project({ id, title, description, images, liveLink, gith
                 // Updates the state
                 setIsIntersecting(entry.isIntersecting)
             },
-            // Triggers before element fully visble - snazzy!
+            // Triggers before element fully visible - snazzy!
             { rootMargin: "-80px -80px" }
         )
 
