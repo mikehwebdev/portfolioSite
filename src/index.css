@@ -109,9 +109,9 @@ html {
 }
 
 .top.expanded {
-  transform: rotate(225deg);
+  transform: rotate(225deg) translateY(45);
   transform-origin: center;
-  y: 45;
+  /* y: 45; */
 }
 
 .middle.expanded {
@@ -119,9 +119,9 @@ html {
 }
 
 .bottom.expanded {
-  transform: rotate(-225deg);
+  transform: rotate(-225deg) translateY(45);
   transform-origin: center;
-  y: 45;
+  /* y: 45; */
 }
 
 .nav-menu {
