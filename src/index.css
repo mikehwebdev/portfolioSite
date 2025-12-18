@@ -109,7 +109,8 @@ html {
 }
 
 .top.expanded {
-  rotate: 225deg;
+  transform: rotate(225deg);
+  transform-origin: center;
   y: 45;
 }
 
@@ -118,7 +119,8 @@ html {
 }
 
 .bottom.expanded {
-  rotate: -225deg;
+  transform: rotate(-225deg);
+  transform-origin: center;
   y: 45;
 }
 
@@ -221,11 +223,8 @@ img {
   width: 100%;
   margin: 2rem 0;
   border-radius: 50% 50% 60% 30% / 30% 76% 24% 70%;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    0 20px 60px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0.05);
   grid-column: 2/4;
+  /* The below are to fix a bug on ios thst had dark background behind images  */
   overflow: hidden;
   transform: translate3d(0, 0, 0);
   -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
@@ -241,17 +240,18 @@ img {
   grid-column: 2/4;
   justify-self: center;
   font-size: clamp(1.2rem, 3.25vw, 2rem);
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .home-tech-icons-container {
   display: flex;
-  /* grid-column: 1/2; */
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-
-
 }
 
 .tech-icon-card {
@@ -300,15 +300,14 @@ img {
   grid-column: 2/4;
 }
 
+
+
 .about-content-img {
   width: 100%;
   align-self: center;
   border-radius: 66% 34% 59% 41% / 30% 28% 72% 70%;
   grid-column: 2/4;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    0 20px 60px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 0, 0, 0.05);
+  /* The below are to fix a bug on ios thst had dark background behind images  */
   overflow: hidden;
   transform: translate3d(0, 0, 0);
   -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
@@ -322,8 +321,6 @@ img {
   width: 100%;
   align-self: center;
   transition: all 250ms linear;
-  overflow: hidden;
-  background-color: transparent;
 }
 
 
@@ -360,7 +357,13 @@ img {
 }
 
 .about-text {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  width: 90%;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  justify-self: center;
+  text-align: center;
   grid-column: 2/4;
 }
 
@@ -376,6 +379,17 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.projects-description-text {
+  font-size: clamp(1.2rem, 3vw, 1.75rem);
+  width: 90%;
+  max-width: 60rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .project-0 {
@@ -436,6 +450,12 @@ img {
 .project-description-text {
   font-size: clamp(1.25rem, 2.25vw, 1.65rem);
   margin-bottom: 1rem;
+}
+
+.projects-description-link {
+  color: var(--grey);
+  font-style: italic;
+  text-decoration:underline;
 }
 
 .project-live-icon > svg,
@@ -941,7 +961,6 @@ a {
   .about-text:nth-of-type(3) {
     grid-column: 2/3;
     padding: 0 1.75rem 0 0;
-    text-align: left;
   }
 
   .about-text:nth-of-type(2) {

@@ -8,10 +8,10 @@ import { useToggler } from "../Hooks/useToggler"
 // Navigation items configuration - single source of truth
 const navItems = [
     { to: "/", label: "Home" },
-    { to: "/About", label: "About" },
-    { to: "/Projects", label: "Projects" },
-    { to: "/CV", label: "Interactive CV" },
-    { to: "/Widgets", label: "Widgets" }
+    { to: "/about", label: "About" },
+    { to: "/projects", label: "Projects" },
+    { to: "/cv", label: "Interactive CV" },
+    { to: "/widgets", label: "Widgets" }
 ]
 
 // *** Header component *** - main navigation with mobile and desktop menus

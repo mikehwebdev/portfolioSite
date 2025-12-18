@@ -27,149 +27,159 @@ export default function Widgets() {
     const [tuningCount, setTuningCount] = useState(0)
 
     return (
-        <section className="section widgets-section">
+        <>
             <h2 className="title widgets-title">Widgets</h2>
+            <p className="widgets-description-text">
+                This section of my site is dedicated to little widgets of my own creation.
+            </p>
+            <p className="widgets-description-text"> I think a common trait for all frontend developers is seeing a fancy
+                little widget online,  whether by another developer or as part of a larger existing app, and thinking <em>Ooh I want to try that!</em></p>
+            <p className="widgets-description-text"> This section is dedicated to those little widgets. Each one is my own little creation built from the
+                ground up. Some are surrisingly simple and some have been tricky little blighters but each one has been a lot of fun and a great little exercise.
+            </p>
+            <section className="section widgets-section">
 
-            {/* Netflix-style play next button */}
-            <div className="widget">
-                <h3 className="widget-title">Netflix style play next button</h3>
-                <div 
-                className="play-next-container"
-                onClick={togglePlayNext}>
-                    {/* The light background layer */}
-                    <div className="play-next-light">
-                        <p className="play-next-text"><HiMiniPlay />Play next</p>
+                {/* Netflix-style play next button */}
+                <div className="widget">
+                    <h3 className="widget-title">Netflix style play next button</h3>
+                    <div
+                        className="play-next-container"
+                        onClick={togglePlayNext}>
+                        {/* The light background layer */}
+                        <div className="play-next-light">
+                            <p className="play-next-text"><HiMiniPlay />Play next</p>
+                        </div>
+                        {/* Darker animated layer - grows when activated */}
+                        <div className={`play-next-dark ${playNext ? 'play-next-animated' : ''}`}>
+                            <p className="play-next-text"><HiMiniPlay className="play-next-logo" />Play next</p>
+                        </div>
                     </div>
-                    {/* Darker animated layer - grows when activated */}
-                    <div className={`play-next-dark ${playNext ? 'play-next-animated' : ''}`}>
-                        <p className="play-next-text"><HiMiniPlay className="play-next-logo" />Play next</p>
-                    </div>
                 </div>
-            </div>
 
-            {/* Dog gallery widget */}
-            <div className="widget">
-                <h3 className="widget-title">Dog gallery</h3>
-                <div className="image-gallery-container">
-                    {/* Images expand when hovered */}
-                    <img 
-                        className="image-gallery-img" 
-                        src={dog1} 
-                        alt="Dog 1"
-                    />
-                    <img 
-                        className="image-gallery-img" 
-                        src={dog2} 
-                        alt="Dog 2"
-                    />
-                    <img 
-                        className="image-gallery-img" 
-                        src={dog3} 
-                        alt="Dog 3"
-                    />
-                </div>
-            </div>
-
-            {/* Neon widget */}
-            <div className="dark-widget">
-                <h3 className="dark-widget-title">Neon widget</h3>
-                {/* Neon text with glow and flickering effect */}
-                <div 
-                className={`neon-container ${neon ? '' : 'neoff'}`}
-                onClick={toggleNeon}>
-                    {neon ? 'Neon' : 'Neoff'}
-                </div>
-            </div>
-
-            {/* Social media widget */}
-            <div className="widget">
-                <h3 className="widget-title">Social widget</h3>
-                <div className="social-widget">
-                    {/* TikTok logo */}
-                    <div className="social-icon-container">
-                        <img 
-                            className="social-widget-logo" 
-                            src={tikTok}
-                            alt="TikTok logo"
+                {/* Dog gallery widget */}
+                <div className="widget">
+                    <h3 className="widget-title">Dog gallery</h3>
+                    <div className="image-gallery-container">
+                        {/* Images expand when hovered */}
+                        <img
+                            className="image-gallery-img"
+                            src={dog1}
+                            alt="Dog 1"
+                        />
+                        <img
+                            className="image-gallery-img"
+                            src={dog2}
+                            alt="Dog 2"
+                        />
+                        <img
+                            className="image-gallery-img"
+                            src={dog3}
+                            alt="Dog 3"
                         />
                     </div>
-                    <p className="social-widget-text">@example</p>
                 </div>
-            </div>
 
-            {/* Battery widget */}
-            <div className="widget">
-                <h3 className="widget-title">Battery widget</h3>
-                {/* Battery nubbin */}
-                <div className="nubbin"></div>
-                {/* Battery container */}
-                <div className="battery">
-                    <div className="battery-top"></div>
-                    <div className="battery-bottom">
-                        {/* Battery label */}
-                        <p className="battery-text">MIKEYCELL</p>
-                        {/* Charge percentage indicators */}
-                        <p className="zero-percent-charge">0%</p>
-                        <p className="hundred-percent-charge">100%</p>
+                {/* Neon widget */}
+                <div className="dark-widget">
+                    <h3 className="dark-widget-title">Neon widget</h3>
+                    {/* Neon text with glow and flickering effect */}
+                    <div
+                        className={`neon-container ${neon ? '' : 'neoff'}`}
+                        onClick={toggleNeon}>
+                        {neon ? 'Neon' : 'Neoff'}
                     </div>
-                    {/* Battery charge level - colour coded */}
-                    <div className="charge"></div>
                 </div>
-            </div>
 
-            {/* Hacking computer widget */}
-            <div className="dark-widget">
-                <div className="computer-container">
-                    <h3 className="computer-screen-title">Hacking widget</h3>
-                    {/* Start button - toggles computer screen on/off */}
-                    <button 
-                        className="computer-screen-button" 
-                        onClick={toggleComputerScreen}
-                    >
-                        <p className="computer-screen-button-text">Start</p>
-                    </button>
-                    <div className={`computer-screen-container ${computerScreen ? 'computer-screen-container-toggled' : ''}`}>
-                        {/* Main screen display */}
-                        <div className="computer-screen">
-                            {/* Static noise overlay - fades as tuning progresses */}
-                            {computerScreen && 
-                            <div 
-                                className="computer-screen-static"
-                                style={{opacity: `${1 - (tuningCount * 0.33)}`}}
-                                alt="Screen static"
-                            ></div>}
-                            {/* Vault Boy image that appears when tuning */}
-                            {computerScreen && 
-                            <img 
-                                src={vaultboy} 
-                                className="computer-screen-image"
-                                alt="Vault Boy"
-                            />}
+                {/* Social media widget */}
+                <div className="widget">
+                    <h3 className="widget-title">Social widget</h3>
+                    <div className="social-widget">
+                        {/* TikTok logo */}
+                        <div className="social-icon-container">
+                            <img
+                                className="social-widget-logo"
+                                src={tikTok}
+                                alt="TikTok logo"
+                            />
                         </div>
-                        {/* Screen controls section */}
-                        <div className="computer-screen-controls">
-                            {/* Text readout - shows contextual messages based on tuning progress */}
-                            <div className="computer-subscreen">
-                                {computerScreen && 
-                                <p 
-                                    className="computer-subscreen-text"
-                                    key={tuningCount}
-                                >
-                                    {tuningCount === 0 ? 'No signal.' : tuningCount === 3 ? 'Success!' : 'Tuning...'}
-                                </p>}
+                        <p className="social-widget-text">@example</p>
+                    </div>
+                </div>
+
+                {/* Battery widget */}
+                <div className="widget">
+                    <h3 className="widget-title">Battery widget</h3>
+                    {/* Battery nubbin */}
+                    <div className="nubbin"></div>
+                    {/* Battery container */}
+                    <div className="battery">
+                        <div className="battery-top"></div>
+                        <div className="battery-bottom">
+                            {/* Battery label */}
+                            <p className="battery-text">MIKEYCELL</p>
+                            {/* Charge percentage indicators */}
+                            <p className="zero-percent-charge">0%</p>
+                            <p className="hundred-percent-charge">100%</p>
+                        </div>
+                        {/* Battery charge level - colour coded */}
+                        <div className="charge"></div>
+                    </div>
+                </div>
+
+                {/* Hacking computer widget */}
+                <div className="dark-widget">
+                    <div className="computer-container">
+                        <h3 className="computer-screen-title">Hacking widget</h3>
+                        {/* Start button - toggles computer screen on/off */}
+                        <button
+                            className="computer-screen-button"
+                            onClick={toggleComputerScreen}
+                        >
+                            <p className="computer-screen-button-text">Start</p>
+                        </button>
+                        <div className={`computer-screen-container ${computerScreen ? 'computer-screen-container-toggled' : ''}`}>
+                            {/* Main screen display */}
+                            <div className="computer-screen">
+                                {/* Static noise overlay - fades as tuning progresses */}
+                                {computerScreen &&
+                                    <div
+                                        className="computer-screen-static"
+                                        style={{ opacity: `${1 - (tuningCount * 0.33)}` }}
+                                        alt="Screen static"
+                                    ></div>}
+                                {/* Vault Boy image that appears when tuning */}
+                                {computerScreen &&
+                                    <img
+                                        src={vaultboy}
+                                        className="computer-screen-image"
+                                        alt="Vault Boy"
+                                    />}
                             </div>
-                            {/* Rotatable tuning knob - click to progress through tuning stages */}
-                            <div 
-                                className="computer-knob"
-                                style={{transform: `rotate(${tuningCount * 120}deg)`}}
-                                onClick={() => setTuningCount(prev => prev < 3 ? prev + 1 : 3)}
-                                role="button"
-                                aria-label="Tuning knob"
-                            ></div>
+                            {/* Screen controls section */}
+                            <div className="computer-screen-controls">
+                                {/* Text readout - shows contextual messages based on tuning progress */}
+                                <div className="computer-subscreen">
+                                    {computerScreen &&
+                                        <p
+                                            className="computer-subscreen-text"
+                                            key={tuningCount}
+                                        >
+                                            {tuningCount === 0 ? 'No signal.' : tuningCount === 3 ? 'Success!' : 'Tuning...'}
+                                        </p>}
+                                </div>
+                                {/* Rotatable tuning knob - click to progress through tuning stages */}
+                                <div
+                                    className="computer-knob"
+                                    style={{ transform: `rotate(${tuningCount * 120}deg)` }}
+                                    onClick={() => setTuningCount(prev => prev < 3 ? prev + 1 : 3)}
+                                    role="button"
+                                    aria-label="Tuning knob"
+                                ></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }

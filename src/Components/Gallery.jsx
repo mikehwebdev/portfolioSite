@@ -33,7 +33,7 @@ export default function Gallery({ imgArray, id }) {
             // Add border highlight class if this image is currently selected
             className={`project-image${selectedImage === index ? ' pulsing-image' : ''}`}
             src={img}
-            key={id}
+            key={index}
             alt={`Horror Movie project snapshot ${index + 1} of ${imgArray.length}`}
             // Handle click to update the large preview image
             onClick={() => updateMassiveImage(index)}
