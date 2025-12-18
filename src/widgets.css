@@ -1,6 +1,11 @@
+/* Widgets Page Styles
+ * A collection of interactive CSS and animation widgets
+ * Each widget demonstrates different CSS techniques and interactive effects
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 
-
+/* CSS Variables for consistent theming across all widgets */
 :root {
   --white: #fff;
   --grey: #b9b9b9;
@@ -20,6 +25,7 @@
 /* General widget styles */
 
 .widgets-section {
+  /* Flex layout for responsive widget grid - uses gap for consistent spacing */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -62,6 +68,7 @@
 }
 
 .widget {
+  /* Light-themed widget with refined shadow to snazz up */
   background-color: var(--yellowed-paper);
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.12),
@@ -433,6 +440,7 @@
 }
 
 .computer-screen-container {
+  /* Rotated -90deg initially (hidden), rotates to 0 when activated for dramatic effect */
   position: absolute;
   top: 0;
   left: 0;
@@ -444,19 +452,20 @@
   align-items: center;
   background-color: var(--black);
   border-radius: 1rem;
-  transform: rotate(-90deg); 
+  transform: rotate(-90deg);
   transform-origin: left bottom;
   transition: all 750ms linear;
   border: 1px solid var(--black);
   
 }
 .computer-screen {
+  /* CRT-style screen with thick border - displays static or image */
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 75%;
-  border: solid var(--grey) 15px; 
+  border: solid var(--grey) 15px;
   border-radius: 1rem;
   box-sizing: border-box;
   overflow: hidden;
@@ -542,10 +551,11 @@
 }
 
 .computer-knob {
+  /* Realistic 3D knob with radial gradient for 3d-ish effect */
   z-index: 3;
   border-radius: 50%;
   border: 5px var(--dark-grey) solid;
-  background: 
+  background:
     radial-gradient(circle at 30% 30%, var(--grey), var(--dark-grey)),
     linear-gradient(135deg, transparent 45%, var(--crtGreen) 50%, transparent 55%);
   width: 20%;
@@ -570,6 +580,7 @@
 }
 
 .computer-subscreen-text {
+  /* Typewriter effect using steps() - text appears character by character */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -583,8 +594,9 @@
   overflow: hidden;
 }
 
-/* Animations */
+/* Animations - Collection of effects used across multiple widgets */
 
+/* Switch-on effect: scale from center, circle -> square, with scanlines appearing */
 @keyframes switch-on {
     0% {transform:scale(0,0);
         background-color: white;
@@ -598,55 +610,29 @@
     100% {text-shadow: 3px 3px #000, 8px 8px #00B140;}    
 }
 
-
+/* Reveal: Text width expands creating typewriter effect */
 @keyframes reveal {
     0%{width: 0;}
     60%{width: 0;}
     100%{width: 100%;}
 }
 
-@keyframes progress-bar {
-    0%{width: 0;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    10%{width: 20%;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    30%{width: 45%;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    40%{width: 60%;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    50%{width: 80%;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    90%{width: 100%;
-        color:#00B140;
-        font-size: 0rem;
-        height:1rem;}
-    100%{
-        color:#00B140;
-        font-size: 0rem;
-        height:5rem;
-    }
-}
-
+/* Play-next: Dark overlay layer expands from 0% to 100% width over 3 seconds
+ * Creates the Netflix-style effect where dark background covers the light text
+ * Uses linear timing for consistent, smooth expansion across the button */
 @keyframes play-next {
   0% {
+    /* Dark layer starts hidden at 0% width */
     width: 0%;
   }
 
   100% {
+    /* Dark layer expands to fill entire button, covering the light text */
     width: 100%;
   }
 }
 
+/* Battery-charge: Fills battery indicator with color progression (red -> yellow -> green) */
 @keyframes battery-charge {
   0% {
     background-color: red;
