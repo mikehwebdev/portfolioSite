@@ -101,6 +101,7 @@ html {
   height: 4rem;
   width: 4rem;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .line {
@@ -222,7 +223,7 @@ img {
   margin: 2rem 0;
   border-radius: 50% 50% 60% 30% / 30% 76% 24% 70%;
   grid-column: 2/4;
-  /* The below are to fix a bug on ios thst had dark background behind images  */
+  /* The below are to fix a bug on ios thqt had dark background behind images  */
   overflow: hidden;
   transform: translate3d(0, 0, 0);
   -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
@@ -253,6 +254,7 @@ img {
 }
 
 .tech-icon-card {
+  /* Technology skill badges that lift up on hover */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,6 +274,7 @@ img {
 }
 
 .tech-icon-card:hover {
+  /* Lifts card on hover with enhanced shadow for depth */
   transform: translateY(-5px);
   box-shadow:
     0 10px 20px rgba(0, 0, 0, 0.15),
@@ -494,6 +497,7 @@ img {
 }
 
 .project-gallery-container {
+  /* Thumbnail gallery - flex layout with wrap for responsive sizing */
   grid-area: images;
   display: flex;
   flex-wrap: wrap;
@@ -503,10 +507,10 @@ img {
 }
 
 .project-image {
+  /* Clickable thumbnail - smooth transition to pulsing state when selected */
   margin-top: .5rem;
   border-radius: .35rem;
   object-fit: cover;
-  
   max-width: 7rem;  
   aspect-ratio: 1/1;
   flex: 1 1 50px;
@@ -518,8 +522,10 @@ img {
 
 .pulsing-image {
   animation: pulse 1500ms ease infinite;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
 }
 
+/* Pulse: Scales element up then back down - used for selected gallery thumbnails */
 @keyframes pulse {
   0%{transform: scale(1)}
   50%{transform: scale(1.1)}
@@ -527,6 +533,7 @@ img {
 }
 
 .project-massive-image-container {
+  /* Large preview image which is hidden by default, expands when animation active */
   grid-area: massive-image;
   display: grid;
   transition: max-height 200ms ease-out;
@@ -535,11 +542,15 @@ img {
 }
 
 .project-massive-image {
-  width: 100%;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  width: 95%;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+  border-radius: .45rem;
 }
 
 .massive-image-max-height {
+  /* Expanded state which allows image to be visible */
   max-height: 500px;
 }
 
@@ -711,6 +722,7 @@ img {
 }
 
 .cv-element-subItem {
+  /* Employment history item. Collapsible with smooth height transition */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 0fr;
@@ -720,6 +732,7 @@ img {
     "cv-element-subItem-data"
   ;
   margin-bottom: 2rem;
+  /* Animates between 0fr (collapsed) and 1fr (expanded). Smooth! */
   transition: grid-template-rows 500ms ease;
 }
 
@@ -735,6 +748,7 @@ img {
 }
 
 .rotate-cv-arrow {
+  /* Arrow rotates 180deg when section is expanded */
   transform: rotate(180deg);
 }
 
@@ -822,11 +836,6 @@ a {
   color: var(--dark-grey);
 }
 
-/* .loading-text {
-  font-size: 3rem;
-  font-weight: 500;
-  animation: slide-in-out 2s infinite;
-} */
 
 @media (min-width:768px) {
 
@@ -927,10 +936,6 @@ a {
   }
 
   /* About stylings */
-
-  /* .about {
-    grid-template-columns: 2em 1fr 1fr 2em;
-  } */
 
   .about-text {
     align-self: center;
@@ -1033,8 +1038,10 @@ a {
   }
 }
 
-/* animations */
+/* Animations */
 
+/* Fade-in: Element scales up (1.5 -> 1) while fading in (0 -> 1)
+ * Creates an entrance effect for appearing content */
 @keyframes fade-in {
   0% {
     scale: 1.5;
@@ -1047,6 +1054,8 @@ a {
   }
 }
 
+/* Reverse-fade-in: Simple fade in without scaling
+ * Used for less dramatic entrance effects */
 @keyframes reverse-fade-in {
   0% {
     opacity: 0
@@ -1057,6 +1066,8 @@ a {
   }
 }
 
+/* Shrink-width: Element shrinks horizontally while fading out
+ * Goes from 50% width to 0% over animation duration
 @keyframes shrink-width {
   0% {
     width: 50%;
@@ -1073,7 +1084,9 @@ a {
   }
 }
 
-@keyframes grow-width {
+/* Grow-width: Element expands horizontally while fading in
+ * Goes from 50% width to 100% - opposite of shrink-width */
+/* @keyframes grow-width {
   0% {
     width: 50%;
     opacity: 0;
@@ -1082,9 +1095,11 @@ a {
   100% {
     width: 100%;
     opacity: 1;
-  }
-}
+  } */
+/* } */ 
 
+/* Slide-up: Element moves from 1000px below to normal position
+ * Creates an entrance effect from bottom of viewport */
 @keyframes slide-up {
   0% {
     transform: translateY(1000px);

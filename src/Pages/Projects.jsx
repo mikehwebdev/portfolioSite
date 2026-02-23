@@ -34,8 +34,7 @@ export default function Projects() {
             <p className="projects-description-text">These projects are more technically complicated apps or full sites that I've developed as side projects
                 to really show off my web development skills.
             </p>
-            <p className="projects-description-text">For smaller projects you can check out my 
-                <Link to="../widgets" className="projects-description-link"> Widgets</Link> section. For more exercise based projects you can head over to my
+            <p className="projects-description-text">For smaller projects you can check out my <Link to="../widgets" className="projects-description-link">Widgets</Link> section. For more exercise based projects you can head over to my
                 <a href="https://www.frontendmentor.io/profile/mikehwebdev" target="_blank" className="projects-description-link"> Frontend Mentor</a> profile. These projects
                 are based on figma design documents provided to reflect more real world scenarios.</p>
             {/* Mapped project components */}

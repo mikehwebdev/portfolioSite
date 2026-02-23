@@ -5,6 +5,13 @@ import horror4 from "../imgs/Projects/HorrorFlick/Horror4.png"
 import horror5 from "../imgs/Projects/HorrorFlick/Horror5.png"
 import horror6 from "../imgs/Projects/HorrorFlick/Horror6.png"
 
+import webDev1 from "../imgs/Projects/webDevQuiz/webDev1.png"
+import webDev2 from "../imgs/Projects/webDevQuiz/webDev2.png"
+import webDev3 from "../imgs/Projects/webDevQuiz/webDev3.png"
+import webDev4 from "../imgs/Projects/webDevQuiz/webDev4.png"
+import webDev5 from "../imgs/Projects/webDevQuiz/webDev5.png"
+import webDev6 from "../imgs/Projects/webDevQuiz/webDev6.png"
+
 
 const projectData = [
     {
@@ -19,15 +26,22 @@ const projectData = [
         liveLink: "https://horrorflickreviews.netlify.app/",
         githubLink: "https://github.com/mikehwebdev/horrorFlickReviews"
     }
-    // ,
-    // {
-    //     id: 2,
-    //     title: "project 2",
-    //     description: ["test 2"],
-    //     image: "image",
-    //     liveLink: "liveLink",
-    //     githubLink: "githubLink"
-    // },
+    ,
+    {
+        id: 2,
+        title: "Web development quiz",
+        description: [
+                        "I love this little project. It re-confirms to me the power and usefulness of software development",
+                        "As I started to transition from just learning web development to actively seeking a web development role I was looking for a tool to help drill me on web development concepts.",
+                        "Unfortunately I couldn't find something that ticked all my boxes. I wanted a simple multiple choice app that I could use to sharpen my knowledge whenever I had a spare momment such as on lunch breaks or while waiting for a bus.",
+                        "I couldn't find one that suited so I just built one for myself! I created an example question around a javascript method, provided the answer and then provided two plausible sounding but incorrect answers.",
+                        "I then asked AI to use that approach as a guideline and generate hundreds of questions on topics that a junior dev would need to know for their first role - and what you see here is the result!"
+        ],
+        images: [webDev1, webDev2, webDev3, webDev4, webDev5, webDev6],
+        liveLink: "https://mikeyswebdevelopmentquiz.netlify.app/",
+        githubLink: "https://github.com/mikehwebdev/JSQuiz"
+    }
+    
     // {
     //     id: 3,
     //     title: "project 3",

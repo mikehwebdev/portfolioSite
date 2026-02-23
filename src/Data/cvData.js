@@ -3,7 +3,7 @@
 const cvData = [{
     id: 0,
     title: "Personal statement",
-    text: ["I'm a hardworking and focussed individual who is just as happy working in a team as I am working independently.", "I have a keen eye for detail as well as aptitude for thinking about the wider consequences of my actions and work.", "I have great resilience to challenging working conditions and am never afraid to get my hands dirty. I'm always ready to get stuck in and do my bit to achieve individual goals, and the goals of my team.", "Despite my great work ethic I'm still always up for a laugh and am great at striking a balance between having a good time and creating a positive working environment and getting the job done."]
+    text: ["I'm a hardworking and focused individual who is just as happy working in a team as I am working independently.", "I have a keen eye for detail as well as aptitude for thinking about the wider consequences of my actions and work.", "I have great resilience to challenging working conditions and am never afraid to get my hands dirty. I'm always ready to get stuck in and do my bit to achieve individual goals, and the goals of my team.", "Despite my great work ethic I'm still always up for a laugh and am great at striking a balance between having a good time and creating a positive working environment and getting the job done."]
 
 },
 {
@@ -71,7 +71,7 @@ const cvData = [{
 {
     id: 90,
     title: "Skills",
-    list: ["HTML 5", "CSS", "Javascript", "React", "React Router", "Git", "Responsive Design", "Excellent communication skills", "Problem solver", "Great at fostering inter-team collaboration", "Excellent telephone manner", "Calm under pressure", "Excellent team player", "Motivated learner", "Conflict resolution", "Training and coaching", "Presentation and public speaking", "Data and trend analysis", "Full clean driving licence"]
+    list: ["HTML 5", "CSS", "Javascript", "React", "React Router", "Git", "Responsive Design", "Problem solver","Excellent communication skills", "Great at fostering inter-team collaboration", "Excellent telephone manner", "Calm under pressure", "Excellent team player", "Motivated learner", "Conflict resolution", "Training and coaching", "Presentation and public speaking", "Data and trend analysis", "Full clean driving licence"]
 },
 
 {
