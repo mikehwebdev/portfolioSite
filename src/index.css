@@ -226,6 +226,7 @@ img {
   /* The below are to fix a bug on ios thqt had dark background behind images  */
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  mask-image: radial-gradient(circle, white 0%, white 100%);
   -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
 }
 
@@ -311,6 +312,7 @@ img {
   /* The below are to fix a bug on ios thst had dark background behind images  */
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  mask-image: radial-gradient(circle, white 0%, white 100%);
   -webkit-mask-image: radial-gradient(circle, white 0%, white 100%);
 }
 

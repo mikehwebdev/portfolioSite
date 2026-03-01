@@ -1,7 +1,5 @@
 // Import icon components from react-icons
-import { FaGithub } from "react-icons/fa6"
-import { FaLinkedin } from "react-icons/fa6"
-import { FaEnvelope } from "react-icons/fa6"
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload  } from "react-icons/fa6"
 
 // Social media links configuration - single source of truth
 const socialLinks = [
@@ -22,6 +20,13 @@ const socialLinks = [
         Icon: FaEnvelope, 
         label: "Email",
         external: false
+    },
+    { 
+        url: "/Michael Hatton CV.docx", 
+        Icon: FaDownload, 
+        label: "CV",
+        external: false,
+        download: "Michael Hatton CV.docx"
     }
 ]
 
@@ -30,13 +35,15 @@ export default function Socials() {
     return (
         <>
             {/* Map through social links to render each link */}
-            {socialLinks.map(({ url, Icon, label, external }) => (
+            {socialLinks.map(({ url, Icon, label, external, download }) => (
                 <a 
                     key={label}
                     href={url} 
                     target={external ? "_blank" : ''}
                     rel={external ? "noopener noreferrer" : ''}
                     aria-label={label}
+                    download={download}
+
                 >
                     <Icon size="3rem" className="footer-icons" />
                 </a>
