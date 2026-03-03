@@ -22,11 +22,11 @@ const socialLinks = [
         external: false
     },
     { 
-        url: "/Michael Hatton CV.docx", 
+        url: "/Michael Hatton CV.pdf", 
         Icon: FaDownload, 
         label: "CV",
         external: false,
-        download: "Michael Hatton CV.docx"
+        download: "Michael Hatton CV.pdf"
     }
 ]
 
